@@ -11,5 +11,5 @@ src/test/java/com/example/service/RobotMoveImplTest.runCommands() to check how t
 
 Dependency
 -----------
-Java 1.8
-Junit 4.12
+- Java 7 up
+- Junit 4.12
