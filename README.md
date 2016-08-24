@@ -1,11 +1,15 @@
-*** How To Run
+Toy Robot Simulator
+===================
+
 BUILD
+-----------
 $ mvn clean install => build the application
 
 RUN
-see src/test/java/com/example/service/RobotMoveImplTest.runCommands() to check the usage of
-RobotMove
+-----------
+src/test/java/com/example/service/RobotMoveImplTest.runCommands() to check how to run RobotMove
 
-*** Dependency
+Dependency
+-----------
 Java 1.8
 Junit 4.12
