@@ -1,9 +1,11 @@
 package com.example.dto;
 
+import com.example.type.Direction;
+
 /**
  * Result of robot's movement
  */
-public class RobotMoveResult {
+public class RobotActionResult {
 
     // Type of result
     private ResultType result;
@@ -12,13 +14,13 @@ public class RobotMoveResult {
     // robot's y location
     private int robotY;
     // robot's facing direction
-    private String robotDirection;
+    private Direction robotDirection;
 
     public ResultType getResult() {
         return result;
     }
 
-    public RobotMoveResult setResult(ResultType result) {
+    public RobotActionResult setResult(ResultType result) {
         this.result = result;
         return this;
     }
@@ -27,7 +29,7 @@ public class RobotMoveResult {
         return robotX;
     }
 
-    public RobotMoveResult setRobotX(int robotX) {
+    public RobotActionResult setRobotX(int robotX) {
         this.robotX = robotX;
         return this;
     }
@@ -36,22 +38,22 @@ public class RobotMoveResult {
         return robotY;
     }
 
-    public RobotMoveResult setRobotY(int robotY) {
+    public RobotActionResult setRobotY(int robotY) {
         this.robotY = robotY;
         return this;
     }
 
-    public String getRobotDirection() {
+    public Direction getRobotDirection() {
         return robotDirection;
     }
 
-    public RobotMoveResult setRobotDirection(String robotDirection) {
+    public void setRobotDirection(Direction robotDirection) {
         this.robotDirection = robotDirection;
-        return this;
     }
 
     public enum ResultType {
         SUCCESSFUL,
+        FAILED,
         NOT_INITIALISED,
         OUT_OF_TABLE_BOUNDARY,
         ILLEGAL_ARGUMENT
