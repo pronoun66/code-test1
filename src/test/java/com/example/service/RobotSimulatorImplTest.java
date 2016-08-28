@@ -76,7 +76,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_PlaceCommand_invalidXFormat() throws Exception {
+    public void execute_PlaceCommand_invalidXFormat_causeInvalidArgument() throws Exception {
         // Given
         String input = "PLACE x,0,NORTH";
 
@@ -88,7 +88,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_PlaceCommand_invalidYFormat() throws Exception {
+    public void execute_PlaceCommand_invalidYFormat_causeInvalidArgument() throws Exception {
         // Given
         String input = "PLACE 0,y,NORTH";
 
@@ -100,7 +100,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_placeCommand_invalidDirectionFormat() throws Exception {
+    public void execute_placeCommand_invalidDirectionFormat_causeInvalidArgument() throws Exception {
         // Given
         String input = "PLACE 0,0,XXXXXX";
 
@@ -112,7 +112,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_placeCommand_incompleteArguments() throws Exception {
+    public void execute_placeCommand_incompleteArguments_causeInvalidArgument() throws Exception {
         // Given, missing direction
         String input = "PLACE 0,0";
 
@@ -124,7 +124,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_placeCommand_failedResult_throwIllegalStateException() throws Exception {
+    public void execute_placeCommand_failedResult_causeInvalidCommand() throws Exception {
         // Given
         String input = "PLACE 0,0,NORTH";
         RobotActionResult robotActionResult = new RobotActionResult();
@@ -213,7 +213,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_reportCommand_failedResult_throwIllegalStateException() throws Exception {
+    public void execute_reportCommand_failedResult_causeInvalidCommand() throws Exception {
         // Given
         String input = "REPORT";
         RobotActionResult robotActionResult = new RobotActionResult();
@@ -229,7 +229,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute_unsupportedCommand_invalidDirectionFormat() throws Exception {
+    public void execute_unsupportedCommand_causeUnsupportedCommand() throws Exception {
         // Given
         String input = "X";
 
@@ -241,7 +241,7 @@ public class RobotSimulatorImplTest {
     }
 
     @Test
-    public void execute__showLineAndMessage_whenIllegalArgumentException() throws Exception {
+    public void execute__showLineAndMessage_causeUnsupportedCommand() throws Exception {
         // Given
         String input = "PLACE 1,2,EAST\n"
                 + "MOVE\n"

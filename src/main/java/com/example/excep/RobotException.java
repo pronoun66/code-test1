@@ -9,7 +9,4 @@ public class RobotException extends Exception {
         super(message);
     }
 
-    public RobotException(String message, Exception e) {
-        super(message, e);
-    }
 }

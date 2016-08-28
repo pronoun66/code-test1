@@ -24,7 +24,7 @@ public class RobotActionImplTest {
     public ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void place() throws Exception {
+    public void place_successful() throws Exception {
         // Given
         int x = 1, y = 2;
         Direction direction = Direction.EAST;
@@ -42,7 +42,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void place_xLessThan0() throws Exception {
+    public void place_xLessThan0_causeOutOfTableBoundary() throws Exception {
         // Given
         int x = -1, y = 2;
         Direction direction = Direction.EAST;
@@ -55,7 +55,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void place_xEqualOrLargerThanTableXLength() throws Exception {
+    public void place_xEqualOrLargerThanTableXLength_causeOutOfTableBoundary() throws Exception {
         // Given
         int x = tableXLength, y = 2;
         Direction direction = Direction.EAST;
@@ -68,7 +68,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void place_yLessThan0() throws Exception {
+    public void place_yLessThan0_causeOutOfTableBoundary() throws Exception {
         // Given
         int x = 1, y = -2;
         Direction direction = Direction.EAST;
@@ -81,7 +81,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void place_yEqualOrLargerThanTableXLength() throws Exception {
+    public void place_yEqualOrLargerThanTableXLength_causeOutOfTableBoundary() throws Exception {
         // Given
         int x = 1, y = tableYLength;
         Direction direction = Direction.EAST;
@@ -94,7 +94,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void place_invalidDirection() throws Exception {
+    public void place_invalidDirection_causeIllegalArgument() throws Exception {
         // Given
         int x = 1, y = 2;
         Direction direction = null;
@@ -107,7 +107,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move() throws Exception {
+    public void move_successful() throws Exception {
         // Given
         robotAction.place(1, 2, Direction.EAST);
                 
@@ -124,7 +124,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move_noRobotPlaced() throws Exception {
+    public void move_noRobotPlaced_causeNotInitialised() throws Exception {
         // When
         RobotActionResult result = robotAction.move();
 
@@ -133,7 +133,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move_outTableLeftBoundary() throws Exception {
+    public void move_outTableLeftBoundary_causeOutOfTableBoundary() throws Exception {
         // Given
         robotAction.place(0, 0, Direction.WEST);
 
@@ -151,7 +151,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move_outTableRightBoundary() throws Exception {
+    public void move_outTableRightBoundary_causeOutOfTableBoundary() throws Exception {
         // Given
         robotAction.place(4, 0, Direction.EAST);
 
@@ -169,7 +169,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move_outTableTopBoundary() throws Exception {
+    public void move_outTableTopBoundary_causeOutOfTableBoundary() throws Exception {
         // Given
         robotAction.place(0, 4, Direction.NORTH);
 
@@ -187,7 +187,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void move_outTableBottomBoundary() throws Exception {
+    public void move_outTableBottomBoundary_causeOutOfTableBoundary() throws Exception {
         // Given
         robotAction.place(0, 0, Direction.SOUTH);
 
@@ -205,7 +205,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void left() throws Exception {
+    public void left_successful() throws Exception {
         // Given
         robotAction.place(0, 0, Direction.EAST);
 
@@ -255,7 +255,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void left_noRobotPlaced() throws Exception {
+    public void left_noRobotPlaced_causeNotInitialised() throws Exception {
         // When
         RobotActionResult result = robotAction.left();
 
@@ -264,7 +264,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void right() throws Exception {
+    public void right_successful() throws Exception {
         // Given
         robotAction.place(0, 0, Direction.EAST);
 
@@ -314,7 +314,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void right_noRobotPlaced() throws Exception {
+    public void right_noRobotPlaced_causeNotInitialised() throws Exception {
         // When
         RobotActionResult result = robotAction.right();
 
@@ -323,7 +323,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void report() throws Exception {
+    public void report_successful() throws Exception {
         // Given
         robotAction.place(1, 2, Direction.EAST);
 
@@ -338,7 +338,7 @@ public class RobotActionImplTest {
     }
 
     @Test
-    public void report_noRobotPlaced() throws Exception {
+    public void report_noRobotPlaced_causeNotInitialised() throws Exception {
         // When
         RobotActionResult result = robotAction.report();
 

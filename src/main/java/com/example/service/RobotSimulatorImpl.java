@@ -5,9 +5,7 @@ import com.example.excep.RobotException;
 import com.example.type.Direction;
 
 import static com.example.dto.RobotActionResult.ResultType.SUCCESSFUL;
-import static com.example.excep.RobotErrorCode.INVALID_ARGUMENT;
-import static com.example.excep.RobotErrorCode.INVALID_COMMAND;
-import static com.example.excep.RobotErrorCode.UNSUPPORTED_COMMAND;
+import static com.example.excep.RobotErrorCode.*;
 
 /**
  * Implementation of RobotSimulator
