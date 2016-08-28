@@ -27,16 +27,17 @@ more example in src/main/java/sample/RobotSimulatorSample.java
 
 * Maven
 
-
-    mvn clean install
-
+```
+mvn clean install
+```
 
 ## Running tests
 
 * Maven
 
-
-    mvn test
+```
+mvn test
+```
 
 ## Built With
 
