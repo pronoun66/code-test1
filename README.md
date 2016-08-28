@@ -1,6 +1,17 @@
-# Project Title
+# Title
 
-Toy Robot Simulator, which supports 'PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT' commands
+Toy Robot Simulator, which supports 'PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT' commands.  
+
+## Description
+Command:
+ - PLACE x, y, direction: place a robot at (x, y) facing a direction ('EAST', 'WEST', 'NORTH', 
+'SOUTH').   
+ - MOVE: move one stop toward facing direction
+ - LEFT: turn left
+ - RIGHT: turn right 
+ - REPORT: report the robot's status: "x,y,direction"
+
+For more information, see [PROBLEM.md](PROBLEM.md)
 
 ## Sample Code
 
