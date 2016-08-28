@@ -13,13 +13,10 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static com.example.dto.RobotActionResult.ResultType.FAILED;
-import static com.example.dto.RobotActionResult.ResultType.ILLEGAL_ARGUMENT;
 import static com.example.dto.RobotActionResult.ResultType.SUCCESSFUL;
-import static org.junit.Assert.*;
+import static com.example.excep.RobotErrorCode.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.*;
@@ -87,7 +84,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 1: " + input,  result);
+        assertEquals(INVALID_ARGUMENT.getMessage() + " on line 1: " + input, result);
     }
 
     @Test
@@ -99,7 +96,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 1: " + input,  result);
+        assertEquals(INVALID_ARGUMENT.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -111,7 +108,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 1: " + input,  result);
+        assertEquals(INVALID_ARGUMENT.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -123,7 +120,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 1: " + input,  result);
+        assertEquals(INVALID_ARGUMENT.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -139,7 +136,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalStateException on line 1: " + input,  result);
+        assertEquals(INVALID_COMMAND.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -228,7 +225,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalStateException on line 1: " + input,  result);
+        assertEquals(INVALID_COMMAND.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -240,7 +237,7 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 1: " + input,  result);
+        assertEquals(UNSUPPORTED_COMMAND.getMessage() + " on line 1: " + input,  result);
     }
 
     @Test
@@ -255,6 +252,6 @@ public class RobotSimulatorImplTest {
         String result = robotSimulator.execute(input);
 
         // Verify
-        assertEquals("IllegalArgumentException on line 4: X",  result);
+        assertEquals(UNSUPPORTED_COMMAND.getMessage() + " on line 4: X",  result);
     }
 }

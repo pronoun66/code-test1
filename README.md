@@ -1,15 +1,52 @@
-Toy Robot Simulator
-===================
+# Project Title
 
-BUILD
------------
-$ mvn clean install => build the application
+Toy Robot Simulator, which supports 'PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT' commands
 
-RUN
------------
-src/test/java/com/example/service/RobotMoveImplTest.runCommands() to check how to run RobotMove
+## Sample Code
 
-Dependency
------------
-- Java 7 up
+    RobotSimulator robotSimulator = new RobotSimulatorImpl();
+    String output = robotSimulator.execute(input);
+
+Input:
+    
+    PLACE 1,2,EAST
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    REPORT
+
+Output:
+
+    3,3,NORTH
+
+
+more example in src/main/java/sample/RobotSimulatorSample.java
+    
+## Building
+
+* Maven
+
+
+    mvn clean install
+
+
+## Running tests
+
+* Maven
+
+
+    mvn test
+
+## Built With
+
+* Maven
+
+## Version
+1.0
+
+## Dependency
+
+- Java 7 up 
 - Junit 4.12
+- mockito-all 1.10.19 
